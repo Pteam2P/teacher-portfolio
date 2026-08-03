@@ -674,6 +674,17 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   line-height: 1.5;
 }
 
+
+.archive-card h4 {
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+  min-height: 2.65em;
+}
+
+.archive-card > div {
+  min-width: 0;
+}
+
 @media (max-width: 900px) {
   .hero-grid, .about-grid, .experience-grid, .research-intro, .research-details { grid-template-columns: 1fr; }
   .hero-copy { text-align: center; }
