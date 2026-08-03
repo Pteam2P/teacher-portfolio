@@ -206,19 +206,18 @@ blockquote {
   flex-shrink: 0;
 }
 
-.skills-grid, .work-grid {
+.work-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
-.skill-card, .work-card { padding: 28px; }
-.skill-card span, .work-number {
+.work-card { padding: 28px; }
+.work-number {
   color: var(--gold);
   font-size: 1.8rem;
   font-weight: 700;
 }
-.skill-card p, .work-card p { color: var(--muted); }
-.work-grid { grid-template-columns: repeat(3, 1fr); }
+.work-card p { color: var(--muted); }
 .work-card a { color: var(--navy); font-weight: 600; }
 
 .vision-section {
@@ -256,6 +255,149 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
 .reveal { opacity: 0; transform: translateY(24px); transition: .7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
+
+
+.skills-layout {
+  display: grid;
+  gap: 24px;
+}
+
+.skills-panel {
+  padding: 28px;
+  background: var(--white);
+  border: 1px solid rgba(11,31,58,.08);
+  border-radius: 22px;
+  box-shadow: 0 10px 35px rgba(11,31,58,.07);
+}
+
+.skills-panel-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.skills-number {
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  background: var(--navy);
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.skills-kicker {
+  margin: 0 0 2px;
+  color: var(--gold);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.skills-panel h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.2rem;
+  line-height: 1.45;
+}
+
+.digital-skills {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.97), rgba(247,244,237,.95));
+}
+
+.software-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.software-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 18px;
+  border: 1px solid rgba(11,31,58,.08);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.software-item > div {
+  min-width: 0;
+}
+
+.software-item strong {
+  display: block;
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+.software-item > div span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.5;
+}
+
+.skill-level {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.level-good {
+  color: var(--navy);
+  background: rgba(202,166,90,.28);
+}
+
+.level-medium {
+  color: #31507a;
+  background: #e8f0fb;
+}
+
+.soft-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.check-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 30px;
+  color: var(--text);
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: .08em;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: var(--white);
+  background: var(--gold);
+  font-size: .72rem;
+  font-weight: 700;
+}
 
 .experience-card {
   padding: 34px;
@@ -690,7 +832,7 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   .hero-copy { text-align: center; }
   blockquote { text-align: left; }
   .hero-actions { justify-content: center; }
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .software-list, .soft-skills-grid { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
   .certificate-grid { grid-template-columns: repeat(2, 1fr); }
   .archive-grid { grid-template-columns: repeat(2, 1fr); }
@@ -769,7 +911,13 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
     margin-top: 4px;
   }
 
-  .skills-grid { grid-template-columns: 1fr; }
+  .skills-panel { padding: 22px; }
+  .software-list, .soft-skills-grid { grid-template-columns: 1fr; }
+  .software-item {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
   .certificate-grid { grid-template-columns: 1fr; }
   .archive-grid, .archive-grid-single { grid-template-columns: 1fr; }
   .archive-group summary { padding: 17px 18px; }
