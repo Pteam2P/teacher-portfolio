@@ -827,8 +827,119 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   min-width: 0;
 }
 
+
+.royal-inspiration {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+  align-items: stretch;
+  gap: 28px;
+}
+
+.royal-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.royal-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--white);
+  border: 1px solid rgba(11,31,58,.08);
+  box-shadow: 0 12px 36px rgba(11,31,58,.09);
+}
+
+.royal-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  background: var(--cream);
+}
+
+.royal-card figcaption {
+  padding: 16px 18px 18px;
+  color: var(--navy);
+  font-size: .82rem;
+  line-height: 1.55;
+  text-align: center;
+  font-weight: 500;
+}
+
+.teacher-quote {
+  position: relative;
+  display: grid;
+  align-content: center;
+  min-height: 100%;
+  margin: 0;
+  padding: 38px 36px;
+  border-left: 0;
+  border-radius: 24px;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(202,166,90,.32), transparent 32%),
+    linear-gradient(145deg, var(--navy), var(--navy-2));
+  box-shadow: 0 14px 40px rgba(11,31,58,.16);
+}
+
+.teacher-quote .quote-mark {
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  color: var(--gold);
+  font-size: 5rem;
+  line-height: 1;
+  opacity: .65;
+}
+
+.teacher-quote p {
+  position: relative;
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  line-height: 1.9;
+  text-align: center;
+}
+
+.family-inspiration {
+  display: grid;
+  grid-template-columns: minmax(280px, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 32px;
+  margin-top: 30px;
+  padding: 28px;
+  border-radius: 24px;
+  background: var(--white);
+  border: 1px solid rgba(11,31,58,.08);
+  box-shadow: 0 12px 36px rgba(11,31,58,.08);
+}
+
+.family-photo {
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--cream);
+}
+
+.family-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.family-copy h3 {
+  margin: 4px 0 12px;
+  color: var(--navy);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.family-copy p:last-child {
+  margin: 0;
+  color: var(--text);
+}
+
 @media (max-width: 900px) {
-  .hero-grid, .about-grid, .experience-grid, .research-intro, .research-details { grid-template-columns: 1fr; }
+  .hero-grid, .about-grid, .experience-grid, .research-intro, .research-details, .royal-inspiration, .family-inspiration { grid-template-columns: 1fr; }
   .hero-copy { text-align: center; }
   blockquote { text-align: left; }
   .hero-actions { justify-content: center; }
@@ -879,6 +990,11 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   .hero-actions { gap: 10px; }
   .btn { padding: 0 18px; }
 
+
+  .royal-gallery { grid-template-columns: 1fr 1fr; }
+  .teacher-quote { padding: 34px 24px; }
+  .family-inspiration { padding: 22px; }
+
   .research-feature { padding: 20px; }
   .research-gallery {
     grid-template-columns: 1fr;
@@ -910,6 +1026,12 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
     height: 56px;
     margin-top: 4px;
   }
+
+
+  .royal-gallery { grid-template-columns: 1fr; }
+  .royal-card img { aspect-ratio: 4 / 5; }
+  .teacher-quote p { text-align: left; }
+  .family-photo img { aspect-ratio: 4 / 3; }
 
   .skills-panel { padding: 22px; }
   .software-list, .soft-skills-grid { grid-template-columns: 1fr; }
