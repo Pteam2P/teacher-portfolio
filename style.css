@@ -828,122 +828,206 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
 }
 
 
-.royal-inspiration {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
-  align-items: stretch;
-  gap: 28px;
+.license-feature,
+.scout-credentials {
+  padding: 30px;
+  border: 1px solid rgba(11,31,58,.08);
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: 0 12px 38px rgba(11,31,58,.08);
 }
 
-.royal-gallery {
+.license-feature {
+  display: grid;
+  grid-template-columns: minmax(260px, .7fr) minmax(0, 1.3fr);
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 24px;
+  background:
+    radial-gradient(circle at 8% 10%, rgba(202,166,90,.18), transparent 30%),
+    var(--white);
+}
+
+.license-copy h3,
+.scout-copy h3 {
+  margin: 7px 0 10px;
+  color: var(--navy);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.license-copy p,
+.scout-copy p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.credential-label {
+  color: var(--gold);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+
+.license-pages,
+.scout-pages {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  gap: 14px;
 }
 
-.royal-card {
-  margin: 0;
+.document-image {
+  position: relative;
+  display: block;
   overflow: hidden;
-  border-radius: 22px;
-  background: var(--white);
+  border-radius: 16px;
   border: 1px solid rgba(11,31,58,.08);
-  box-shadow: 0 12px 36px rgba(11,31,58,.09);
-}
-
-.royal-card img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center top;
   background: var(--cream);
 }
 
-.royal-card figcaption {
-  padding: 16px 18px 18px;
-  color: var(--navy);
-  font-size: .82rem;
-  line-height: 1.55;
-  text-align: center;
-  font-weight: 500;
-}
-
-.teacher-quote {
-  position: relative;
-  display: grid;
-  align-content: center;
-  min-height: 100%;
-  margin: 0;
-  padding: 38px 36px;
-  border-left: 0;
-  border-radius: 24px;
-  color: var(--white);
-  background:
-    radial-gradient(circle at 90% 10%, rgba(202,166,90,.32), transparent 32%),
-    linear-gradient(145deg, var(--navy), var(--navy-2));
-  box-shadow: 0 14px 40px rgba(11,31,58,.16);
-}
-
-.teacher-quote .quote-mark {
-  position: absolute;
-  top: 16px;
-  left: 24px;
-  color: var(--gold);
-  font-size: 5rem;
-  line-height: 1;
-  opacity: .65;
-}
-
-.teacher-quote p {
-  position: relative;
-  margin: 0;
-  font-size: clamp(1rem, 2vw, 1.22rem);
-  line-height: 1.9;
-  text-align: center;
-}
-
-.family-inspiration {
-  display: grid;
-  grid-template-columns: minmax(280px, .9fr) minmax(0, 1.1fr);
-  align-items: center;
-  gap: 32px;
-  margin-top: 30px;
-  padding: 28px;
-  border-radius: 24px;
-  background: var(--white);
-  border: 1px solid rgba(11,31,58,.08);
-  box-shadow: 0 12px 36px rgba(11,31,58,.08);
-}
-
-.family-photo {
-  overflow: hidden;
-  border-radius: 18px;
-  background: var(--cream);
-}
-
-.family-photo img {
+.document-image img {
   width: 100%;
   aspect-ratio: 4 / 3;
+  object-fit: contain;
+  transition: transform .3s ease;
+}
+
+.document-image:hover img {
+  transform: scale(1.02);
+}
+
+.document-image span {
+  position: absolute;
+  inset: auto 10px 10px auto;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: var(--white);
+  background: rgba(11,31,58,.86);
+  font-size: .72rem;
+  font-weight: 600;
+}
+
+.credential-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.credential-card {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid rgba(11,31,58,.08);
+  border-radius: 20px;
+  background: var(--white);
+  box-shadow: 0 10px 32px rgba(11,31,58,.07);
+}
+
+.credential-preview {
+  min-height: 230px;
+  background: var(--cream);
+}
+
+.credential-preview img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center top;
+  transition: transform .3s ease;
 }
 
-.family-copy h3 {
-  margin: 4px 0 12px;
+.credential-card:hover .credential-preview img {
+  transform: scale(1.025);
+}
+
+.credential-copy {
+  min-width: 0;
+  padding: 22px;
+}
+
+.credential-copy h3 {
+  margin: 6px 0 8px;
   color: var(--navy);
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: 1.08rem;
 }
 
-.family-copy p:last-child {
-  margin: 0;
-  color: var(--text);
+.credential-copy p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+.credential-copy a {
+  color: var(--navy);
+  font-size: .86rem;
+  font-weight: 700;
+}
+
+.scout-credentials {
+  display: grid;
+  grid-template-columns: minmax(240px, .65fr) minmax(0, 1.35fr);
+  align-items: center;
+  gap: 28px;
+  margin-top: 24px;
+}
+
+.privacy-note {
+  margin: 18px 0 0;
+  padding: 13px 16px;
+  border-radius: 12px;
+  color: #755b1c;
+  background: #fff7dc;
+  font-size: .82rem;
+}
+
+
+.credential-card-wide {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(340px, 1.25fr) minmax(260px, .75fr);
+}
+
+.transcript-pages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-width: 0;
+  background: var(--cream);
+}
+
+.transcript-pages .credential-preview {
+  position: relative;
+  min-height: 300px;
+  border-right: 1px solid rgba(11,31,58,.08);
+}
+
+.transcript-pages .credential-preview:last-child {
+  border-right: 0;
+}
+
+.page-label {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: var(--white);
+  background: rgba(11,31,58,.86);
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.transcript-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 @media (max-width: 900px) {
-  .hero-grid, .about-grid, .experience-grid, .research-intro, .research-details, .royal-inspiration, .family-inspiration { grid-template-columns: 1fr; }
+  .hero-grid, .about-grid, .experience-grid, .research-intro, .research-details { grid-template-columns: 1fr; }
   .hero-copy { text-align: center; }
   blockquote { text-align: left; }
   .hero-actions { justify-content: center; }
   .software-list, .soft-skills-grid { grid-template-columns: 1fr; }
+  .credential-grid { grid-template-columns: 1fr; }
+  .credential-card-wide { grid-column: auto; grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
   .certificate-grid { grid-template-columns: repeat(2, 1fr); }
   .archive-grid { grid-template-columns: repeat(2, 1fr); }
@@ -991,9 +1075,15 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   .btn { padding: 0 18px; }
 
 
-  .royal-gallery { grid-template-columns: 1fr 1fr; }
-  .teacher-quote { padding: 34px 24px; }
-  .family-inspiration { padding: 22px; }
+  .license-feature,
+  .scout-credentials { padding: 20px; }
+  .license-pages,
+  .scout-pages { grid-template-columns: 1fr; }
+  .credential-card { grid-template-columns: 1fr; }
+  .transcript-pages { grid-template-columns: 1fr; }
+  .transcript-pages .credential-preview { border-right: 0; border-bottom: 1px solid rgba(11,31,58,.08); }
+  .transcript-pages .credential-preview:last-child { border-bottom: 0; }
+  .credential-preview { min-height: 260px; }
 
   .research-feature { padding: 20px; }
   .research-gallery {
@@ -1027,14 +1117,10 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
     margin-top: 4px;
   }
 
-
-  .royal-gallery { grid-template-columns: 1fr; }
-  .royal-card img { aspect-ratio: 4 / 5; }
-  .teacher-quote p { text-align: left; }
-  .family-photo img { aspect-ratio: 4 / 3; }
-
   .skills-panel { padding: 22px; }
   .software-list, .soft-skills-grid { grid-template-columns: 1fr; }
+  .credential-grid { grid-template-columns: 1fr; }
+  .credential-card-wide { grid-column: auto; grid-template-columns: 1fr; }
   .software-item {
     align-items: flex-start;
     flex-direction: column;
