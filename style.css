@@ -1275,3 +1275,87 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   }
   .profile-badge { right: 10px; }
 }
+/* ==========================================
+   Scout Credentials Responsive Layout
+   ========================================== */
+.scout-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--card-bg, #ffffff);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.scout-copy h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color, #1a202c);
+}
+
+.scout-copy p {
+  color: var(--text-muted, #4a5568);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.scout-pages {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.scout-pages .document-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.scout-pages .document-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scout-pages .document-image img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.scout-pages .document-image span {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted, #4a5568);
+  text-align: center;
+}
+
+/* แสดงผลแบบ 2 คอลัมน์คู่กันเมื่อหน้าจอใหญ่ขึ้น (Desktop / Tablet) */
+@media (min-width: 768px) {
+  .scout-credentials {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .scout-copy {
+    flex: 1;
+    padding-right: 2rem;
+  }
+
+  .scout-pages {
+    flex: 1;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
