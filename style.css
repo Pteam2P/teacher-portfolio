@@ -102,21 +102,52 @@ blockquote {
 
 .profile-card { position: relative; width: min(390px, 100%); margin-inline: auto; }
 .profile-placeholder {
+  position: relative;
   aspect-ratio: 4 / 5;
   display: grid;
   place-items: center;
   text-align: center;
   border: 1px solid rgba(255,255,255,.35);
   border-radius: 32px;
-  background: linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.05));
+  background-color: rgba(255,255,255,.08);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   box-shadow: var(--shadow);
   overflow: hidden;
   color: rgba(255,255,255,.72);
+  transition: transform .3s ease;
 }
-.profile-placeholder.has-image {
-  background: url("images/profile.jpg") center/cover no-repeat;
+
+.profile-placeholder.has-image .placeholder-text { display: none; }
+
+.profile-hint {
+  display: none;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(11,31,58,.85);
+  color: var(--white);
+  font-size: .75rem;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 2;
 }
-.profile-placeholder.has-image span { display: none; }
+
+.profile-placeholder.can-toggle {
+  cursor: pointer;
+}
+.profile-placeholder.can-toggle:hover {
+  transform: scale(1.02);
+}
+.profile-placeholder.can-toggle .profile-hint {
+  display: block;
+}
+
 .profile-badge {
   position: absolute;
   right: -18px;
@@ -127,6 +158,8 @@ blockquote {
   color: var(--navy);
   font-weight: 700;
   letter-spacing: .12em;
+  pointer-events: none;
+  z-index: 3;
 }
 
 .section { padding: 96px 0; }
@@ -254,8 +287,6 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
 
 .reveal { opacity: 0; transform: translateY(24px); transition: .7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
-
-
 
 .skills-layout {
   display: grid;
@@ -472,7 +503,6 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   border: 1px solid rgba(202,166,90,.28);
 }
 
-
 .research-feature {
   padding: 34px;
   background: var(--white);
@@ -645,7 +675,6 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   color: var(--white);
 }
 
-
 .certificate-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -706,7 +735,6 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   color: var(--muted);
   font-size: .9rem;
 }
-
 
 .certificate-archive {
   margin-top: 46px;
@@ -807,6 +835,9 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   margin: 0 0 4px;
   color: var(--navy);
   font-size: .9rem;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+  min-height: 2.65em;
 }
 
 .archive-card p {
@@ -816,17 +847,9 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   line-height: 1.5;
 }
 
-
-.archive-card h4 {
-  overflow-wrap: anywhere;
-  line-height: 1.45;
-  min-height: 2.65em;
-}
-
 .archive-card > div {
   min-width: 0;
 }
-
 
 .license-feature,
 .scout-credentials {
@@ -978,7 +1001,6 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   background: #fff7dc;
   font-size: .82rem;
 }
-
 
 .credential-card-wide {
   grid-column: 1 / -1;
@@ -1183,7 +1205,6 @@ footer { background: #06111f; color: rgba(255,255,255,.75); }
   blockquote { font-size: 1rem; }
   .hero-actions { gap: 10px; }
   .btn { padding: 0 18px; }
-
 
   .license-feature,
   .scout-credentials { padding: 20px; }
